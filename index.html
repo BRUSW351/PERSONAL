@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitAltiplano — Entrenamiento, Nutrición y Fútbol Sala</title>
+  <link rel="stylesheet" href="estilo/estilos.css" />
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="brand">⚡ FIT<span>ALTIPLANO</span></div>
+      <nav>
+        <a href="#rutina-casa">1. Rutina Casa</a>
+        <a href="#alimentacion">2. Alimentación</a>
+        <a href="#calendario">3. Cumplimiento & Peso</a>
+        <a href="#vitaminas">4. Vitaminas</a>
+        <a href="#futbol-sala">5. Fútbol Sala</a>
+      </nav>
+    </div>
+
+    <!-- Cronómetro Rápido HIIT / Descansos -->
+    <div class="timer-bar">
+      <div class="timer-inner">
+        <div class="timer-display-group">
+          <span class="timer-label">⏱️ Temporizador:</span>
+          <div class="timer-clock" id="timerDisplay">00:40</div>
+          <span class="timer-phase" id="timerPhase">Listo</span>
+        </div>
+        <div class="timer-controls">
+          <button class="btn-mini" onclick="setTimer(30)">30s</button>
+          <button class="btn-mini" onclick="setTimer(45)">45s</button>
+          <button class="btn-mini" onclick="setTimer(60)">1m Descanso</button>
+          <button class="btn-mini" onclick="startHiitMode()">HIIT 40/20</button>
+          <button class="btn-mini primary" id="timerToggleBtn" onclick="toggleTimer()">Iniciar</button>
+          <button class="btn-mini danger" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Resumen Personal -->
+    <div class="hero">
+      <div>
+        <h1>Plan Personal de Recomposición y Rendimiento</h1>
+        <p>Diseñado para entrenar desde casa con <strong>prioridad en el Core</strong>, ganar masa muscular magra, reducir porcentaje de grasa con alimentos de <strong>La Paz / El Alto</strong> y potenciar tu explosividad en <strong>Fútbol Sala</strong>.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <small>Peso / Estatura</small>
+          <strong>72 kg · 1.69 m</strong>
+        </div>
+        <div class="stat-box">
+          <small>Objetivo</small>
+          <strong>Recomposición Muscular</strong>
+        </div>
+        <div class="stat-box">
+          <small>Altitud Local</small>
+          <strong>3,600 – 4,100 msnm</strong>
+        </div>
+        <div class="stat-box">
+          <small>Prioridad Física</small>
+          <strong>Core + Fútbol Sala</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 1: RUTINA DE ENTRENAMIENTO EN CASA -->
+    <section id="rutina-casa">
+      <div class="section-header">
+        <h2>1. Rutina de Entrenamiento en Casa (Lunes a Domingo)</h2>
+        <p>Selecciona un día para ver los ejercicios más efectivos sin equipamiento pesado. El trabajo de <strong>Core</strong> encabeza la semana sin descuidar ningún grupo muscular.</p>
+      </div>
+
+      <div class="day-tabs" id="homeDayTabs"></div>
+      <div class="card" id="homeWorkoutCard"></div>
+    </section>
+
+    <!-- SECCIÓN 2: PLAN DE ALIMENTACIÓN -->
+    <section id="alimentacion">
+      <div class="section-header">
+        <h2>2. Plan de Alimentación — La Paz / El Alto (72 kg · 1.69 m)</h2>
+        <p>Estrategia de recomposición corporal: déficit calórico ligero (~300 kcal) con proteína alta para oxidar grasa mientras construyes músculo con productos locales y económicos.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Distribución Diaria Recomendada</h3>
+          <div class="macro-bars">
+            <div class="macro-card">
+              <strong>2,130 kcal</strong>
+              <span>Calorías Objetivo</span>
+            </div>
+            <div class="macro-card">
+              <strong>148 g</strong>
+              <span>Proteína (2.05 g/kg)</span>
+            </div>
+            <div class="macro-card">
+              <strong>225 g / 65 g</strong>
+              <span>Carbos / Grasas</span>
+            </div>
+          </div>
+
+          <div class="meal-list">
+            <div class="meal-item">
+              <strong>Desayuno (07:30) — Energía Andina</strong>
+              <p>3 huevos enteros + 2 claras revueltos con espinaca o tomate, 1 taza de avena cocida con quinua o api morado sin azúcar refinada, y 1 plátano o papaya.</p>
+            </div>
+            <div class="meal-item">
+              <strong>Media Mañana (10:30) — Snack Proteico</strong>
+              <p>1 taza de yogur natural o griego con 2 cucharadas de cañahua tostada (pito de cañahua) + 10 almendras o maní tostado sin sal.</p>
+            </div>
+            <div class="meal-item">
+              <strong>Almuerzo (13:00) — Comida Principal</strong>
+              <p>180 g de pechuga de pollo a la plancha o filete de trucha del Titicaca, 1 taza de quinua graneada (o arroz integral), 1/2 taza de habas o tarwi (chocho) y ensalada abundante.</p>
+            </div>
+            <div class="meal-item">
+              <strong>Pre-Entreno (16:30) — Carga Rápida</strong>
+              <p>1 taza de café negro o mate de coca + 2 tostadas integrales con palta (aguacate) o 1 papa mediana cocida con quesillo fresco bajo en grasa.</p>
+            </div>
+            <div class="meal-item">
+              <strong>Cena Post-Entreno (20:00) — Recuperación</strong>
+              <p>160 g de pollo desmenuzado, carne magra de res o 2 latas de atún al agua, 2 unidades pequeñas de tunta o chuño remojado/cocido y verduras salteadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>¿Qué debes realizar para lograr tu objetivo?</h3>
+          <ul class="rules-list">
+            <li><strong>1. Déficit calórico controlado:</strong> No hagas dietas extremas. Al bajar solo 300 kcal de tu mantenimiento (~2,430 kcal), obligas al cuerpo a usar grasa sin sacrificar masa muscular.</li>
+            <li><strong>2. Prioriza la proteína en cada comida:</strong> Consume al menos 30–35 g de proteína por comida principal (pollo, huevo, trucha, tarwi, carne magra) para activar la síntesis proteica.</li>
+            <li><strong>3. Sobrecarga progresiva en casa:</strong> Como entrenas con peso corporal, aumenta dificultad cada semana: más repeticiones, pausas de 2 segundos abajo o menor descanso entre series.</li>
+            <li><strong>4. Carbohidratos alrededor del entrenamiento:</strong> Concentra la quinua, papa, chuño y avena antes y después de entrenar o jugar fútbol sala para rendir al máximo.</li>
+            <li><strong>5. Hidratación en altura (La Paz / El Alto):</strong> A más de 3,600 msnm pierdes más agua al respirar. Toma 2.5 a 3 litros de agua al día (puedes incluir mate de coca o manzanilla sin azúcar).</li>
+            <li><strong>6. Sueño reparador (7 a 8 horas):</strong> El músculo crece mientras duermes; dormir poco eleva el cortisol y frena la pérdida de grasa abdominal.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Protocolo de Altitud La Paz / El Alto -->
+      <div class="altitude-box">
+        <h3>🏔️ Protocolo de Rendimiento en Altura (La Paz 3,600 m · El Alto 4,100 m)</h3>
+        <p class="subtitle-muted">Entrenar a gran altitud acelera la fatiga respiratoria y la deshidratación. Aplica estas 3 reglas prácticas:</p>
+        <div class="altitude-grid">
+          <div class="altitude-item">
+            <strong>💧 Electrolitos Caseros</strong>
+            En días de Fútbol Sala o HIIT, agrega a 1 litro de agua el jugo de 1 limón, una pizca de sal yodada y 1 cucharadita de miel para evitar calambres.
+          </div>
+          <div class="altitude-item">
+            <strong>🫁 Control del Esfuerzo (RPE)</strong>
+            Deja siempre 1–2 repeticiones en reserva (RPE 8/10) en fuerza; reserva el 10/10 solo para los sprints cortos de fútbol sala.
+          </div>
+          <div class="altitude-item">
+            <strong>🌡️ Calentamiento Articular</strong>
+            Por el clima frío de El Alto/La Paz, dedica 6 minutos obligatorios a movilidad de tobillos, rodillas y cadera antes de empezar.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: CALENDARIO DE CUMPLIMIENTO Y TRACKER CORPORAL -->
+    <section id="calendario">
+      <div class="section-header">
+        <h2>3. Calendario de Cumplimiento y Registro Corporal</h2>
+        <p>Marca cada meta cumplida de lunes a domingo, guarda tu progreso semanal y registra tu peso y medida de cintura.</p>
+      </div>
+
+      <div class="card">
+        <div class="progress-header">
+          <strong>Progreso Semanal Actual: <span id="progressPercent" class="accent-green">0%</span></strong>
+          <span id="completedCount" class="subtitle-muted">0 de 28 hábitos completados</span>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="complianceTable">
+            <thead>
+              <tr>
+                <th>Hábito / Meta Diaria</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+              </tr>
+            </thead>
+            <tbody id="complianceBody"></tbody>
+          </table>
+        </div>
+
+        <div class="calendar-actions">
+          <div class="btn-group">
+            <button class="btn btn-save" onclick="saveWeekProgress()">💾 Guardar Avance Semanal</button>
+            <button class="btn btn-reset" onclick="resetCurrentWeek()">↺ Reiniciar Semana</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn-mini" onclick="exportAllData()">⬇️ Exportar Respaldo JSON</button>
+            <button class="btn-mini" onclick="document.getElementById('importFile').click()">⬆️ Importar Respaldo</button>
+            <input type="file" id="importFile" accept=".json" hidden onchange="importAllData(event)" />
+          </div>
+        </div>
+
+        <div class="history-log">
+          <strong class="history-title">📅 Historial de Semanas Guardadas:</strong>
+          <div class="history-items" id="historyContainer">
+            <span class="subtitle-muted">Aún no guardaste registros semanales.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tracker de Peso y Cintura -->
+      <div class="tracker-box">
+        <h3 class="tracker-title">⚖️ Registro de Peso (kg) y Cintura (cm)</h3>
+        <p class="subtitle-muted">En recomposición muscular, bajar centímetros de cintura manteniendo o subiendo ligeramente el peso indica ganancia de músculo.</p>
+
+        <div class="tracker-form">
+          <div class="form-group">
+            <label for="trackDate">Fecha</label>
+            <input type="date" id="trackDate" />
+          </div>
+          <div class="form-group">
+            <label for="trackWeight">Peso Corporal (kg)</label>
+            <input type="number" step="0.1" id="trackWeight" placeholder="Ej: 71.5" />
+          </div>
+          <div class="form-group">
+            <label for="trackWaist">Cintura (cm)</label>
+            <input type="number" step="0.5" id="trackWaist" placeholder="Ej: 81.0" />
+          </div>
+          <button class="btn btn-save" onclick="addBodyRecord()">+ Registrar Medida</button>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-header">
+            <span>Evolución de Peso (kg)</span>
+            <span id="weightDeltaSummary">Sin registros suficientes</span>
+          </div>
+          <svg id="weightChart" viewBox="0 0 600 130"></svg>
+        </div>
+
+        <div class="body-records-list" id="bodyRecordsList"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: VITAMINAS Y SUPLEMENTACIÓN -->
+    <section id="vitaminas">
+      <div class="section-header">
+        <h2>4. Recomendaciones de Vitaminas y Suplementación</h2>
+        <p>Apoyo nutricional basado en evidencia para mejorar fuerza, recuperación muscular, oxidación de grasa y rendimiento en altura.</p>
+      </div>
+
+      <div class="vitamins-grid">
+        <div class="vitamin-card">
+          <h3>1. Creatina Monohidratada</h3>
+          <span class="dose">Dosis: 5 g diarios (cualquier hora, todos los días)</span>
+          <p>El suplemento #1 con respaldo científico para aumentar masa muscular, fuerza explosiva en casa y sprints repetidos en fútbol sala.</p>
+        </div>
+
+        <div class="vitamin-card">
+          <h3>2. Proteína Whey (Suero de Leche)</h3>
+          <span class="dose">Dosis: 1 scoop (24–25 g) post-entreno</span>
+          <p>Herramienta práctica para alcanzar tus 148 g de proteína diaria sin sumar grasas ni carbohidratos extra cuando tienes poco tiempo.</p>
+        </div>
+
+        <div class="vitamin-card">
+          <h3>3. Vitamina D3 + K2</h3>
+          <span class="dose">Dosis: 2,000 a 4,000 UI con el almuerzo</span>
+          <p>Clave para la síntesis proteica, salud ósea, sistema inmune y regulación hormonal, especialmente útil si entrenas bajo techo.</p>
+        </div>
+
+        <div class="vitamin-card">
+          <h3>4. Magnesio (Citrato o Glicinato) + Zinc</h3>
+          <span class="dose">Dosis: 300–400 mg Magnesio · 15 mg Zinc (noche)</span>
+          <p>Previene calambres musculares, mejora la calidad del sueño profundo y participa en la producción natural de testosterona.</p>
+        </div>
+
+        <div class="vitamin-card">
+          <h3>5. Omega-3 (EPA / DHA)</h3>
+          <span class="dose">Dosis: 1,000 a 2,000 mg diarios con comida</span>
+          <p>Reduce la inflamación articular por los impactos del fútbol sala y mejora la sensibilidad a la insulina para usar mejor los carbohidratos.</p>
+        </div>
+
+        <div class="vitamin-card">
+          <h3>6. Complejo B + Cafeína Natural</h3>
+          <span class="dose">Dosis: 1 cápsula Complejo B AM · Café 30 min pre-entreno</span>
+          <p>Las vitaminas B1, B6 y B12 optimizan el metabolismo energético; la cafeína aumenta la oxidación de grasas y el enfoque en partidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: ENTRENAMIENTO DE FÚTBOL SALA -->
+    <section id="futbol-sala">
+      <div class="section-header">
+        <h2>5. Plan de Entrenamiento de Fútbol Sala (Lunes a Domingo)</h2>
+        <p>Enfocado en resistencia anaeróbica intermitente, velocidad de reacción en espacios reducidos y control total del balón con planta.</p>
+      </div>
+
+      <div class="day-tabs" id="futsalDayTabs"></div>
+      <div class="card" id="futsalWorkoutCard"></div>
+    </section>
+  </main>
+
+  <footer>
+    FitAltiplano — Proyecto Personal de Salud, Fuerza y Fútbol Sala · Guardado Automático Local
+  </footer>
+
+  <div id="toast">¡Progreso guardado correctamente!</div>
+
+  <script src="js/uno.js"></script>
+</body>
+</html>
